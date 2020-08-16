@@ -53,13 +53,14 @@
 
     </androidx.cardview.widget.CardView>
 
-    <fragment
+    <androidx.fragment.app.FragmentContainerView
         android:id="@+id/frame_stepper"
         android:name="androidx.navigation.fragment.NavHostFragment"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@id/card_stepper"
+        app:defaultNavHost="true"
         app:navGraph="@navigation/nav_main" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
