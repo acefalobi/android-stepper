@@ -3,7 +3,6 @@
 object PluginDependencies {
     const val ANDROID_MAVEN = "com.github.dcendents.android-maven"
 
-    const val HILT = "dagger.hilt.android.plugin"
     const val NAVIGATION = "androidx.navigation.safeargs.kotlin"
     const val SPOTLESS = "plugins.spotless"
 }
@@ -49,19 +48,6 @@ object AsyncDependencies {
     const val coroutinesAndroid =
         "org.jetbrains.kotlinx:kotlinx-coroutines-android:${Versions.coroutines}"
 
-}
-
-object DependencyInjectionDependencies {
-
-    object Versions {
-        const val dagger = "2.24"
-        const val hilt = "2.28-alpha"
-    }
-
-    const val dagger = "com.google.dagger:dagger:${Versions.dagger}"
-    const val daggerCompiler = "com.google.dagger:dagger-compiler:${Versions.dagger}"
-    const val hilt = "com.google.dagger:hilt-android:${Versions.hilt}"
-    const val hiltCompiler = "com.google.dagger:hilt-android-compiler:${Versions.hilt}"
 }
 
 object UtilityDependencies {

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <declare-styleable name="StepperNavigation">
+    <declare-styleable name="StepperNavigationView">
         <attr name="widgetColor" format="color" />
         <attr name="iconSize" format="dimension" />
         <attr name="items" format="reference" />

@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <item android:id="@+id/step_1_dest"
-        android:title="@string/title_text_color" />
+<item android:id="@+id/step_1_dest"
+    android:title="@string/title_text_color" />
 
-    <item android:id="@+id/step_2_dest"
-        android:title="@string/title_widget_color" />
+<item android:id="@+id/step_2_dest"
+    android:title="@string/title_widget_color" />
 
-    <item android:id="@+id/step_3_dest"
-        android:title="@string/title_text_size" />
+<item android:id="@+id/step_3_dest"
+    android:title="@string/title_text_size" />
 
-    <item android:id="@+id/step_4_dest"
-        android:title="@string/title_icon_size" />
+<item android:id="@+id/step_4_dest"
+    android:title="@string/title_icon_size" />
 
 </menu>

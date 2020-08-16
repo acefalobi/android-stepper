@@ -6,9 +6,7 @@ plugins {
     kotlin("android.extensions")
     kotlin("plugin.allopen")
     kotlin("kapt")
-    id(PluginDependencies.HILT)
     id(PluginDependencies.NAVIGATION)
-    id("kotlin-android")
 }
 
 android {
@@ -66,9 +64,6 @@ dependencies {
     implementation(AndroidXDependencies.navigationUiKtx)
 
     implementation(ViewDependencies.materialComponent)
-
-    implementation(DependencyInjectionDependencies.hilt)
-    kapt(DependencyInjectionDependencies.hiltCompiler)
 
     implementation(AsyncDependencies.coroutines)
     implementation(AsyncDependencies.coroutinesAndroid)
