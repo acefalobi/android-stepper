@@ -9,7 +9,7 @@ plugins {
     id(PluginDependencies.ANDROID_MAVEN)
 }
 
-group = "com.aceinteract.android.stepper"
+group = "com.github.acefalobi"
 
 android {
     compileSdkVersion(BuildConfiguration.compileSdkVersion)
