@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.aceinteract.android.stepper">
+
+    <application
+        android:allowBackup="false"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name="com.aceinteract.android.stepper.presentation.main.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".presentation.samples.StepperNoUpNavActivity"
+            android:label="@string/title_no_up_nav_stepper" />
+        <activity
+            android:name=".presentation.samples.ProgressStepperActivity"
+            android:label="@string/title_progress_stepper" />
+        <activity
+            android:name=".presentation.samples.TabStepperActivity"
+            android:label="@string/title_tab_stepper" />
+        <activity
+            android:name=".presentation.samples.NumberedTabStepperActivity"
+            android:label="@string/title_tab_numbered_stepper" />
+        <activity
+            android:name=".presentation.samples.FadeAnimStepperActivity"
+            android:label="@string/title_fade_anim_stepper" />
+    </application>
+
+</manifest>

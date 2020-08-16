@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_main"
+    app:startDestination="@id/step_1_dest">
+
+    <fragment
+        android:id="@+id/step_1_dest"
+        android:name="com.aceinteract.android.stepper.presentation.steps.Step1Fragment"
+        android:label="@string/title_text_color"
+        tools:layout="@layout/color_change_fragment" />
+
+    <fragment
+        android:id="@+id/step_2_dest"
+        android:name="com.aceinteract.android.stepper.presentation.steps.Step2Fragment"
+        android:label="@string/title_widget_color"
+        tools:layout="@layout/color_change_fragment" />
+
+    <fragment
+        android:id="@+id/step_3_dest"
+        android:name="com.aceinteract.android.stepper.presentation.steps.Step3Fragment"
+        android:label="@string/title_text_size"
+        tools:layout="@layout/size_change_fragment" />
+
+    <fragment
+        android:id="@+id/step_4_dest"
+        android:name="com.aceinteract.android.stepper.presentation.steps.Step4Fragment"
+        android:label="@string/title_icon_size"
+        tools:layout="@layout/size_change_fragment" />
+</navigation>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/card_stepper_icon"
+    android:layout_width="0dp"
+    android:layout_height="0dp"
+    app:cardBackgroundColor="@android:color/transparent"
+    app:cardCornerRadius="100dp"
+    app:layout_constraintTop_toTopOf="parent"
+    tools:layout_height="36dp"
+    tools:layout_width="36dp">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/icon_outer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:srcCompat="@drawable/bg_circle_outline"
+        tools:alpha="0.4F"
+        tools:tint="@color/color_stepper_default" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/icon_inner"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="@dimen/stepper_tab_icon_padding"
+        android:visibility="gone"
+        app:srcCompat="@drawable/ic_check_mini"
+        tools:tint="@android:color/white" />
+
+</androidx.cardview.widget.CardView>

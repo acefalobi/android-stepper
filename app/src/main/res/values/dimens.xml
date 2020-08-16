@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="frame_padding">36dp</dimen>
+
+    <dimen name="card_elevation_medium">4dp</dimen>
+    <dimen name="card_radius_default">12dp</dimen>
+
+    <dimen name="item_padding_vertical">20dp</dimen>
+    <dimen name="item_padding_horizontal">16dp</dimen>
+
+    <dimen name="label_spacing">8dp</dimen>
+
+    <dimen name="widget_spacing">20dp</dimen>
+
+    <dimen name="fab_margin">16dp</dimen>
+
+</resources>

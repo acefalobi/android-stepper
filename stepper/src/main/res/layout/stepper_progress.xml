@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:elevation="0dp"
+    android:layout_width="match_parent"
+    android:layout_height="3dp"
+    app:cardCornerRadius="100dp">
+
+    <ProgressBar
+        android:id="@+id/progress_stepper"
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:layout_gravity="center"
+        android:indeterminate="false"
+        android:max="100"
+        tools:progress="50"
+        tools:progressTint="@color/color_stepper_default" />
+
+</androidx.cardview.widget.CardView>

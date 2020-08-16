@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">Android Stepper</string>
+
+    <!-- Titles -->
+    <string name="title_text_color">Text Color</string>
+    <string name="title_widget_color">Widget Color</string>
+    <string name="title_icon_size">Icon Size</string>
+    <string name="title_text_size">Text Size</string>
+
+    <string name="title_progress_stepper">Progress Stepper</string>
+    <string name="title_tab_stepper">Tab Stepper</string>
+    <string name="title_tab_numbered_stepper">Numbered Tab Stepper</string>
+    <string name="title_fade_anim_stepper">Stepper With Fade Transition Animation</string>
+    <string name="title_no_up_nav_stepper">Stepper Without Up Navigation</string>
+
+    <!-- Labels -->
+    <string name="label_g">G</string>
+    <string name="label_r">R</string>
+    <string name="label_b">B</string>
+    <string name="label_size">Size</string>
+</resources>

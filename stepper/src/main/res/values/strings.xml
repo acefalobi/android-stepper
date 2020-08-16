@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Stepper Types -->
+
+    <string name="stepper_type_tab">TAB</string>
+    <string name="stepper_type_tab_numbered">TAB_NUMBERED</string>
+    <string name="stepper_type_progress">PROGRESS</string>
+
+</resources>
