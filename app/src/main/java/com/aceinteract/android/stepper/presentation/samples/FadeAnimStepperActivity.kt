@@ -22,7 +22,7 @@ import androidx.lifecycle.lifecycleScope
 import androidx.navigation.ui.setupActionBarWithNavController
 import com.aceinteract.android.stepper.R
 import com.aceinteract.android.stepper.StepperNavListener
-import com.aceinteract.android.stepper.StepperNavigation
+import com.aceinteract.android.stepper.StepperNavigationView
 import com.aceinteract.android.stepper.models.StepperSettings
 import com.aceinteract.android.stepper.presentation.steps.StepperViewModel
 import com.aceinteract.android.stepper.utils.findNavControllerFromFragment
@@ -54,9 +54,7 @@ class FadeAnimStepperActivity : AppCompatActivity(), StepperNavListener {
         setSupportActionBar(toolbar)
 
         // Setup Action bar for title and up navigation.
-        setupActionBarWithNavController(
-            findNavControllerFromFragment(R.id.frame_stepper)
-        )
+        setupActionBarWithNavController(findNavControllerFromFragment(R.id.frame_stepper))
 
         button_next.setOnClickListener {
             stepper.goToNextStep()
@@ -65,7 +63,7 @@ class FadeAnimStepperActivity : AppCompatActivity(), StepperNavListener {
         collectStateFlow()
     }
 
-    private fun StepperNavigation.initializeStepper() {
+    private fun StepperNavigationView.initializeStepper() {
         viewModel.updateStepper(
             StepperSettings(
                 widgetColor,
@@ -113,7 +111,7 @@ class FadeAnimStepperActivity : AppCompatActivity(), StepperNavListener {
         findNavControllerFromFragment(R.id.frame_stepper).navigateUp()
 
     /**
-     * Navigate up when the back button is pressed..
+     * Navigate up when the back button is pressed.
      */
     override fun onBackPressed() {
         if (stepper.currentStep == 0) {

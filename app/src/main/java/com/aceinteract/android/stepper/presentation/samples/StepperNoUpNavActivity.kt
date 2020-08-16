@@ -24,7 +24,7 @@ import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import com.aceinteract.android.stepper.R
 import com.aceinteract.android.stepper.StepperNavListener
-import com.aceinteract.android.stepper.StepperNavigation
+import com.aceinteract.android.stepper.StepperNavigationView
 import com.aceinteract.android.stepper.models.StepperSettings
 import com.aceinteract.android.stepper.presentation.steps.StepperViewModel
 import com.aceinteract.android.stepper.utils.findNavControllerFromFragment
@@ -75,7 +75,7 @@ class StepperNoUpNavActivity : AppCompatActivity(), StepperNavListener {
         collectStateFlow()
     }
 
-    private fun StepperNavigation.initializeStepper() {
+    private fun StepperNavigationView.initializeStepper() {
         viewModel.updateStepper(
             StepperSettings(
                 widgetColor,

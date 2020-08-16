@@ -25,10 +25,10 @@ import android.view.SubMenu
 import android.view.View
 import androidx.annotation.ColorInt
 import androidx.constraintlayout.widget.ConstraintLayout
-import com.aceinteract.android.stepper.StepperNavigation
+import com.aceinteract.android.stepper.StepperNavigationView
 
 /**
- * Menu showing steps in the [StepperNavigation].
+ * Menu showing steps in the [StepperNavigationView].
  *
  * @property widgetColor the color to use for widgets like icons and progress bars.
  * @property iconSizeInPX the size of icons in pixels.

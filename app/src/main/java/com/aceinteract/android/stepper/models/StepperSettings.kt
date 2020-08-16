@@ -16,10 +16,10 @@
 package com.aceinteract.android.stepper.models
 
 import androidx.annotation.ColorInt
-import com.aceinteract.android.stepper.StepperNavigation
+import com.aceinteract.android.stepper.StepperNavigationView
 
 /**
- * Data class representing settings for a [StepperNavigation] view
+ * Data class representing settings for a [StepperNavigationView] view
  *
  * @property iconColor the color of the icon in the view.
  * @property textColor the color of the text in the view.

@@ -13,6 +13,10 @@
     <string name="title_fade_anim_stepper">Stepper With Fade Transition Animation</string>
     <string name="title_no_up_nav_stepper">Stepper Without Up Navigation</string>
 
+    <!-- Actions -->
+    <string name="action_previous_step">Previous Step</string>
+    <string name="action_next_step">Next Step</string>
+
     <!-- Labels -->
     <string name="label_g">G</string>
     <string name="label_r">R</string>
