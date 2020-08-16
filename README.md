@@ -22,7 +22,7 @@ See the [Sample app](https://github.com/acefalobi/android-stepper/tree/master/ap
   * [Add StepperNavigationView to layout with the menu](#add-steppernavigationview-to-layout-with-the-menu)
   * [Add NavHost fragment to layout with the nav graph](#add-navhost-fragment-to-layout-with-the-nav-graph)
   * [Setup Stepper with Navigation Controller](#setup-stepper-with-navigation-controller)
-  * [Add StepperNavListener to Activity (optional)](#add-steppernavlistener-to-activity-(optional))
+  * [Add StepperNavListener to Activity (optional)](#add-steppernavlistener-to-activity-optional)
 * [Advanced Usage](#advanced-usage)
   * [Setup with Action Bar](#setup-with-action-bar)
   * [Override back button to go up](#override-back-button-to-go-up)
