@@ -27,7 +27,7 @@ object AndroidXDependencies {
         const val appCompat = "1.2.0"
         const val constraintLayout = "2.0.0-beta6"
         const val coreKtx = "1.3.0"
-        const val navigation = "2.2.0-alpha01"
+        const val navigation = "2.3.0-alpha05"
     }
 
     const val appCompat = "androidx.appcompat:appcompat:${Versions.appCompat}"

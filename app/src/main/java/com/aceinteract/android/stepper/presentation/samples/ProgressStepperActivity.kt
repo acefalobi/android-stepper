@@ -19,13 +19,13 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
-import androidx.navigation.findNavController
 import androidx.navigation.ui.setupActionBarWithNavController
 import com.aceinteract.android.stepper.R
 import com.aceinteract.android.stepper.StepperNavListener
 import com.aceinteract.android.stepper.StepperNavigation
 import com.aceinteract.android.stepper.models.StepperSettings
 import com.aceinteract.android.stepper.presentation.steps.StepperViewModel
+import com.aceinteract.android.stepper.utils.findNavControllerFromFragment
 import kotlinx.android.synthetic.main.progress_stepper_activity.*
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.launchIn
@@ -53,7 +53,7 @@ class ProgressStepperActivity : AppCompatActivity(), StepperNavListener {
 
         // Setup Action bar for title and up navigation.
         setupActionBarWithNavController(
-            findNavController(R.id.frame_stepper)
+            findNavControllerFromFragment(R.id.frame_stepper)
         )
 
         button_next.setOnClickListener {
@@ -74,7 +74,7 @@ class ProgressStepperActivity : AppCompatActivity(), StepperNavListener {
         )
 
         stepperNavListener = this@ProgressStepperActivity
-        setupWithNavController(findNavController(R.id.frame_stepper))
+        setupWithNavController(findNavControllerFromFragment(R.id.frame_stepper))
     }
 
     private fun collectStateFlow() {
@@ -102,7 +102,8 @@ class ProgressStepperActivity : AppCompatActivity(), StepperNavListener {
     /**
      * Use navigation controller to navigate up.
      */
-    override fun onSupportNavigateUp(): Boolean = findNavController(R.id.frame_stepper).navigateUp()
+    override fun onSupportNavigateUp(): Boolean =
+        findNavControllerFromFragment(R.id.frame_stepper).navigateUp()
 
     /**
      * Navigate up when the back button is pressed..
@@ -111,7 +112,7 @@ class ProgressStepperActivity : AppCompatActivity(), StepperNavListener {
         if (stepper.currentStep == 0) {
             super.onBackPressed()
         } else {
-            findNavController(R.id.frame_stepper).navigateUp()
+            findNavControllerFromFragment(R.id.frame_stepper).navigateUp()
         }
     }
 }

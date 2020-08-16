@@ -20,7 +20,6 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
-import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import com.aceinteract.android.stepper.R
@@ -28,6 +27,7 @@ import com.aceinteract.android.stepper.StepperNavListener
 import com.aceinteract.android.stepper.StepperNavigation
 import com.aceinteract.android.stepper.models.StepperSettings
 import com.aceinteract.android.stepper.presentation.steps.StepperViewModel
+import com.aceinteract.android.stepper.utils.findNavControllerFromFragment
 import kotlinx.android.synthetic.main.stepper_no_up_nav_activity.*
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.launchIn
@@ -55,7 +55,7 @@ class StepperNoUpNavActivity : AppCompatActivity(), StepperNavListener {
 
         // Setup Action bar for title with top-level destinations.
         setupActionBarWithNavController(
-            findNavController(R.id.frame_stepper),
+            findNavControllerFromFragment(R.id.frame_stepper),
             AppBarConfiguration.Builder(
                 R.id.step_1_dest,
                 R.id.step_2_dest,
@@ -86,7 +86,7 @@ class StepperNoUpNavActivity : AppCompatActivity(), StepperNavListener {
         )
 
         stepperNavListener = this@StepperNoUpNavActivity
-        setupWithNavController(findNavController(R.id.frame_stepper))
+        setupWithNavController(findNavControllerFromFragment(R.id.frame_stepper))
     }
 
     private fun collectStateFlow() {
@@ -117,5 +117,6 @@ class StepperNoUpNavActivity : AppCompatActivity(), StepperNavListener {
     /**
      * Use navigation controller to navigate up.
      */
-    override fun onSupportNavigateUp(): Boolean = findNavController(R.id.frame_stepper).navigateUp()
+    override fun onSupportNavigateUp(): Boolean =
+        findNavControllerFromFragment(R.id.frame_stepper).navigateUp()
 }
