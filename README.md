@@ -4,7 +4,7 @@
 
 [![Android Build Workflow](https://github.com/acefalobi/android-stepper/workflows/Android%20Build/badge.svg)](https://github.com/acefalobi/android-stepper/actions?query=workflow%3A%22Android+Build%22) [![GitHub release (latest by date)](https://img.shields.io/github/v/release/acefalobi/android-stepper)](https://github.com/acefalobi/android-stepper/releases) ![GitHub last commit](https://img.shields.io/github/last-commit/acefalobi/android-stepper)
 
-A library for creating a wizard-like step-through user interface that uses navigation components and menus for displaying steps with advanced customization. The implementation is similar to the what is done in Google's [BottomNavigationView](https://developer.android.com/guide/navigation/navigation-ui?hl=TR#bottom_navigation).
+A library for creating a wizard-like step-through user interface that uses navigation components and menus for displaying steps with advanced customization. The implementation is similar to what is done in Google's [BottomNavigationView](https://developer.android.com/guide/navigation/navigation-ui?hl=TR#bottom_navigation).
 
 This project is also inspired by [https://github.com/stepstone-tech/android-material-stepper](https://github.com/stepstone-tech/android-material-stepper)
 
@@ -38,9 +38,7 @@ See the [Sample app](https://github.com/acefalobi/android-stepper/tree/master/ap
 
 * Progress
 
-<img src ="./art/stepper_tabs.gif" width="32%" />
-<img src ="./art/stepper_tabs_numbered.gif" width="32%" />
-<img src ="./art/stepper_progress.gif" width="32%" />
+<img src ="./art/stepper_tabs.gif" width="32%" />&nbsp;&nbsp;<img src ="./art/stepper_tabs_numbered.gif" width="32%" />&nbsp;&nbsp;<img src ="./art/stepper_progress.gif" width="32%" />
 
 ### WIP
 
