@@ -52,7 +52,7 @@ class StepperNavigationView(context: Context, attrs: AttributeSet) : FrameLayout
     /**
      * The menu that displays the steps.
      */
-    private lateinit var menu: StepperMenu
+    lateinit var menu: StepperMenu
 
     /**
      * The color to use for widgets.
