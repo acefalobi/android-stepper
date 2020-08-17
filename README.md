@@ -26,6 +26,7 @@ See the [Sample app](https://github.com/acefalobi/android-stepper/tree/master/ap
 * [Advanced Usage](#advanced-usage)
   * [Setup with Action Bar](#setup-with-action-bar)
   * [Override back button to go up](#override-back-button-to-go-up)
+  * [Update Menu Programmatically](#update-menu-programmatically)
 * [XML Attributes](#xml-attributes)
 * [Contributing](#contributing)
 * [License](#license)
@@ -244,6 +245,14 @@ override fun onBackPressed() {
         findNavController(R.id.frame_stepper).navigateUp()
     }
 }
+```
+
+### Update Menu Programmatically
+
+First make sure the menu item already has corresponding destination in the nav graph.
+
+```kotlin
+stepper.menu.add(groupId, R.id.step_4_dest, order, "New Step")
 ```
 
 ## XML Attributes
