@@ -22,7 +22,6 @@ import android.view.MenuInflater
 import android.widget.FrameLayout
 import androidx.annotation.IdRes
 import androidx.core.content.withStyledAttributes
-import androidx.core.view.updatePadding
 import androidx.navigation.AnimBuilder
 import androidx.navigation.NavController
 import androidx.navigation.navOptions
@@ -111,24 +110,24 @@ class StepperNavigationView(context: Context, attrs: AttributeSet) : FrameLayout
 
     init {
         context.withStyledAttributes(attrs, R.styleable.StepperNavigationView, 0) {
-            val widgetColorAttr = if (hasValue(R.styleable.StepperNavigationView_widgetColor)) {
-                getColor(R.styleable.StepperNavigationView_widgetColor, defaultWidgetColor)
+            val widgetColorAttr = if (hasValue(R.styleable.StepperNavigationView_stepperWidgetColor)) {
+                getColor(R.styleable.StepperNavigationView_stepperWidgetColor, defaultWidgetColor)
             } else defaultWidgetColor
 
-            val iconSizeAttr = if (hasValue(R.styleable.StepperNavigationView_textSize)) {
-                getDimensionPixelSize(R.styleable.StepperNavigationView_iconSize, defaultIconSize)
+            val iconSizeAttr = if (hasValue(R.styleable.StepperNavigationView_stepperTextSize)) {
+                getDimensionPixelSize(R.styleable.StepperNavigationView_stepperIconSize, defaultIconSize)
             } else defaultIconSize
 
-            val textColorAttr = if (hasValue(R.styleable.StepperNavigationView_textColor)) {
-                getColor(R.styleable.StepperNavigationView_textColor, defaultTextColor)
+            val textColorAttr = if (hasValue(R.styleable.StepperNavigationView_stepperTextColor)) {
+                getColor(R.styleable.StepperNavigationView_stepperTextColor, defaultTextColor)
             } else defaultTextColor
 
-            val textSizeAttr = if (hasValue(R.styleable.StepperNavigationView_textSize)) {
-                getDimensionPixelSize(R.styleable.StepperNavigationView_textSize, defaultTextSize)
+            val textSizeAttr = if (hasValue(R.styleable.StepperNavigationView_stepperTextSize)) {
+                getDimensionPixelSize(R.styleable.StepperNavigationView_stepperTextSize, defaultTextSize)
             } else defaultTextSize
 
-            val type = if (hasValue(R.styleable.StepperNavigationView_type)) {
-                getString(R.styleable.StepperNavigationView_type)
+            val type = if (hasValue(R.styleable.StepperNavigationView_stepperType)) {
+                getString(R.styleable.StepperNavigationView_stepperType)
             } else defaultType
 
             menu = when (type) {
@@ -162,8 +161,8 @@ class StepperNavigationView(context: Context, attrs: AttributeSet) : FrameLayout
                 else -> throw IllegalArgumentException("Invalid stepper type provided")
             }
 
-            if (hasValue(R.styleable.StepperNavigationView_items)) {
-                val menuId = getResourceId(R.styleable.StepperNavigationView_items, 0)
+            if (hasValue(R.styleable.StepperNavigationView_stepperItems)) {
+                val menuId = getResourceId(R.styleable.StepperNavigationView_stepperItems, 0)
                 MenuInflater(context).inflate(menuId, menu)
             } else throw IllegalArgumentException("items attribute is required")
         }

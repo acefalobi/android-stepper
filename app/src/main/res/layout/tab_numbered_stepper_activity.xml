@@ -47,12 +47,12 @@
             android:paddingTop="20dp"
             android:paddingEnd="16dp"
             android:paddingBottom="20dp"
-            app:iconSize="24dp"
-            app:items="@menu/menu_stepper"
-            app:textColor="@android:color/black"
-            app:textSize="12sp"
-            app:type="@string/stepper_type_tab_numbered"
-            app:widgetColor="@color/color_accent" />
+            app:stepperIconSize="20dp"
+            app:stepperItems="@menu/menu_stepper"
+            app:stepperTextColor="@android:color/black"
+            app:stepperTextSize="12sp"
+            app:stepperType="@string/stepper_type_tab_numbered"
+            app:stepperWidgetColor="@color/color_accent" />
 
 
     </androidx.cardview.widget.CardView>

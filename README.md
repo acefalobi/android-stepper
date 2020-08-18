@@ -156,8 +156,8 @@ dependencies {
     android:id="@+id/stepper"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    app:items="@menu/menu_stepper"
-    app:type="@string/stepper_type_tab" />
+    app:stepperItems="@menu/menu_stepper"
+    app:stepperType="@string/stepper_type_tab" />
 ```
 
 See [XML Attributes](#xml-attributes) for full list of attributes.
@@ -259,12 +259,12 @@ stepper.menu.add(groupId, R.id.step_4_dest, order, "New Step")
 
 | Attribute name | Format | Description |
 | - | - | - |
-| *items* | reference (menu) | **REQUIRED:** Menu to get steps from |
-| *type* | string (@string/stepper_type_tab, @string/stepper_type_tab_numbered, or, @string/stepper_type_progress | The type of stepper |
-| *iconSize* | dimension | The size of the icons |
-| *textColor* | color | The color of the labels |
-| *textSize* | dimension | The size of the labels |
-| *widgetColor* | color | The color of widgets like icons and progress bars |
+| *stepperItems* | reference (menu) | **REQUIRED:** Menu to get steps from |
+| *stepperType* | string (@string/stepper_type_tab, @string/stepper_type_tab_numbered, or, @string/stepper_type_progress | The type of stepper |
+| *stepperIconSize* | dimension | The size of the icons |
+| *stepperTextColor* | color | The color of the labels |
+| *stepperTextSize* | dimension | The size of the labels |
+| *stepperWidgetColor* | color | The color of widgets like icons and progress bars |
 
 ## Contributing
 
