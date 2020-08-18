@@ -89,7 +89,7 @@ Gradle:
 
 ```gradle
 dependencies {
-    implementation 'com.github.acefalobi:android-stepper:0.1.0'
+    implementation 'com.github.acefalobi:android-stepper:0.1.4'
 }
 ```
 
@@ -97,7 +97,7 @@ Kotlin DSL:
 
 ```kotlin
 dependencies {
-    implementation("com.github.acefalobi:android-stepper:0.1.0")
+    implementation("com.github.acefalobi:android-stepper:0.1.4")
 }
 ```
 
