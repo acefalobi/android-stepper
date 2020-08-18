@@ -73,6 +73,8 @@ class NumberedTabStepperActivity : AppCompatActivity(), StepperNavListener {
             )
         )
 
+        menu.add(0 /* or 0 */, R.id.step_4_dest, 0, "New Step")
+
         stepperNavListener = this@NumberedTabStepperActivity
         setupWithNavController(findNavControllerFromFragment(R.id.frame_stepper))
     }

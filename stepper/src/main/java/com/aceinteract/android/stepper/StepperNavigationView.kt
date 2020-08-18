@@ -52,7 +52,7 @@ class StepperNavigationView(context: Context, attrs: AttributeSet) : FrameLayout
     /**
      * The menu that displays the steps.
      */
-    private lateinit var menu: StepperMenu
+    lateinit var menu: StepperMenu
 
     /**
      * The color to use for widgets.
@@ -133,12 +133,6 @@ class StepperNavigationView(context: Context, attrs: AttributeSet) : FrameLayout
 
             menu = when (type) {
                 context.getString(R.string.stepper_type_tab) -> {
-                    updatePadding(
-                        16 * resources.displayMetrics.density.toInt(),
-                        20 * resources.displayMetrics.density.toInt(),
-                        16 * resources.displayMetrics.density.toInt(),
-                        20 * resources.displayMetrics.density.toInt()
-                    )
                     TabStepperMenu(
                         context,
                         widgetColorAttr,
@@ -148,12 +142,6 @@ class StepperNavigationView(context: Context, attrs: AttributeSet) : FrameLayout
                     )
                 }
                 context.getString(R.string.stepper_type_tab_numbered) -> {
-                    updatePadding(
-                        16 * resources.displayMetrics.density.toInt(),
-                        20 * resources.displayMetrics.density.toInt(),
-                        16 * resources.displayMetrics.density.toInt(),
-                        20 * resources.displayMetrics.density.toInt()
-                    )
                     TabNumberedStepperMenu(
                         context,
                         widgetColorAttr,
@@ -163,12 +151,6 @@ class StepperNavigationView(context: Context, attrs: AttributeSet) : FrameLayout
                     )
                 }
                 context.getString(R.string.stepper_type_progress) -> {
-                    updatePadding(
-                        40 * resources.displayMetrics.density.toInt(),
-                        40 * resources.displayMetrics.density.toInt(),
-                        40 * resources.displayMetrics.density.toInt(),
-                        40 * resources.displayMetrics.density.toInt()
-                    )
                     ProgressStepperMenu(
                         context,
                         widgetColorAttr,

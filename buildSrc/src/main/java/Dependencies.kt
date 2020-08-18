@@ -14,7 +14,7 @@ object ProjectDependencies {
 object RootDependencies {
 
     object Versions {
-        const val kotlin = "1.3.72"
+        const val kotlin = "1.4.0"
     }
 
     const val kotlin = "org.jetbrains.kotlin:kotlin-stdlib-jdk8:${Versions.kotlin}"
@@ -41,7 +41,7 @@ object AndroidXDependencies {
 object AsyncDependencies {
 
     object Versions {
-        const val coroutines = "1.3.7"
+        const val coroutines = "1.3.9"
     }
 
     const val coroutines = "org.jetbrains.kotlinx:kotlinx-coroutines-core:${Versions.coroutines}"
