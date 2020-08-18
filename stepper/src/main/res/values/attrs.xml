@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <declare-styleable name="StepperNavigationView">
-        <attr name="widgetColor" format="color" />
-        <attr name="iconSize" format="dimension" />
-        <attr name="items" format="reference" />
-        <attr name="textSize" format="dimension" />
-        <attr name="textColor" format="color" />
-        <attr name="type" format="string" />
+        <attr name="stepperWidgetColor" format="color" />
+        <attr name="stepperIconSize" format="dimension" />
+        <attr name="stepperItems" format="reference" />
+        <attr name="stepperTextSize" format="dimension" />
+        <attr name="stepperTextColor" format="color" />
+        <attr name="stepperType" format="string" />
     </declare-styleable>
 
 </resources>
