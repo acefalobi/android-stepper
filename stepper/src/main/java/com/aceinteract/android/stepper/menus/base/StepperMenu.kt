@@ -24,6 +24,7 @@ import android.view.MenuItem
 import android.view.SubMenu
 import android.view.View
 import androidx.annotation.ColorInt
+import androidx.annotation.StyleRes
 import androidx.constraintlayout.widget.ConstraintLayout
 import com.aceinteract.android.stepper.StepperNavigationView
 
@@ -32,6 +33,7 @@ import com.aceinteract.android.stepper.StepperNavigationView
  *
  * @property widgetColor the color to use for widgets like icons and progress bars.
  * @property iconSizeInPX the size of icons in pixels.
+ * @property textAppearance the text style of the label.
  * @property textColor the color to use for labels.
  * @property textSizeInPX the size of the label in pixels.
  */
@@ -39,8 +41,9 @@ abstract class StepperMenu constructor(
     context: Context,
     @ColorInt open var widgetColor: Int,
     open var iconSizeInPX: Int,
+    @StyleRes open var textAppearance: Int,
     @ColorInt open var textColor: Int,
-    open var textSizeInPX: Int
+    open var textSizeInPX: Int?
 ) : ConstraintLayout(context), Menu {
 
     init {
