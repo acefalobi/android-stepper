@@ -44,6 +44,7 @@ class StepperNavigationView(context: Context, attrs: AttributeSet) : FrameLayout
 
     private val defaultIconSize = 20 * resources.displayMetrics.scaledDensity.toInt()
     private val defaultWidgetColor = context.getColorCompat(R.color.color_stepper_default)
+    private val defaultTextAppearance = android.R.style.TextAppearance
     private val defaultTextColor = Color.BLACK
     private val defaultTextSize = 16 * resources.displayMetrics.density.toInt()
     private val defaultType = context.getString(R.string.stepper_type_tab)
@@ -74,6 +75,16 @@ class StepperNavigationView(context: Context, attrs: AttributeSet) : FrameLayout
         get() = menu.textColor
 
     /**
+     * The style to use for labels.
+     */
+    var textAppearance: Int
+        set(value) {
+            menu.textAppearance = value
+            menu.updateUI()
+        }
+        get() = menu.textAppearance
+
+    /**
      * The size of the label (in pixels).
      */
     var textSize: Int
@@ -81,7 +92,7 @@ class StepperNavigationView(context: Context, attrs: AttributeSet) : FrameLayout
             menu.textSizeInPX = value
             menu.updateUI()
         }
-        get() = menu.textSizeInPX
+        get() = menu.textSizeInPX ?: defaultTextSize
 
     /**
      * The size of the icon (in pixels).
@@ -110,21 +121,13 @@ class StepperNavigationView(context: Context, attrs: AttributeSet) : FrameLayout
 
     init {
         context.withStyledAttributes(attrs, R.styleable.StepperNavigationView, 0) {
-            val widgetColorAttr = if (hasValue(R.styleable.StepperNavigationView_stepperWidgetColor)) {
-                getColor(R.styleable.StepperNavigationView_stepperWidgetColor, defaultWidgetColor)
-            } else defaultWidgetColor
-
-            val iconSizeAttr = if (hasValue(R.styleable.StepperNavigationView_stepperTextSize)) {
-                getDimensionPixelSize(R.styleable.StepperNavigationView_stepperIconSize, defaultIconSize)
-            } else defaultIconSize
-
-            val textColorAttr = if (hasValue(R.styleable.StepperNavigationView_stepperTextColor)) {
-                getColor(R.styleable.StepperNavigationView_stepperTextColor, defaultTextColor)
-            } else defaultTextColor
-
+            val widgetColorAttr = getColor(R.styleable.StepperNavigationView_stepperWidgetColor, defaultWidgetColor)
+            val iconSizeAttr = getDimensionPixelSize(R.styleable.StepperNavigationView_stepperIconSize, defaultIconSize)
+            val textAppearanceAttr = getResourceId(R.styleable.StepperNavigationView_stepperTextAppearance, defaultTextAppearance)
+            val textColorAttr = getColor(R.styleable.StepperNavigationView_stepperTextColor, defaultTextColor)
             val textSizeAttr = if (hasValue(R.styleable.StepperNavigationView_stepperTextSize)) {
                 getDimensionPixelSize(R.styleable.StepperNavigationView_stepperTextSize, defaultTextSize)
-            } else defaultTextSize
+            } else null
 
             val type = if (hasValue(R.styleable.StepperNavigationView_stepperType)) {
                 getString(R.styleable.StepperNavigationView_stepperType)
@@ -136,6 +139,7 @@ class StepperNavigationView(context: Context, attrs: AttributeSet) : FrameLayout
                         context,
                         widgetColorAttr,
                         iconSizeAttr,
+                        textAppearanceAttr,
                         textColorAttr,
                         textSizeAttr
                     )
@@ -145,6 +149,7 @@ class StepperNavigationView(context: Context, attrs: AttributeSet) : FrameLayout
                         context,
                         widgetColorAttr,
                         iconSizeAttr,
+                        textAppearanceAttr,
                         textColorAttr,
                         textSizeAttr
                     )
@@ -154,6 +159,7 @@ class StepperNavigationView(context: Context, attrs: AttributeSet) : FrameLayout
                         context,
                         widgetColorAttr,
                         iconSizeAttr,
+                        textAppearanceAttr,
                         textColorAttr,
                         textSizeAttr
                     )

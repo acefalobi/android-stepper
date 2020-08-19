@@ -53,7 +53,7 @@ object AsyncDependencies {
 object UtilityDependencies {
 
     object Versions {
-        const val androidUtils = "master-SNAPSHOT"
+        const val androidUtils = "0.1.0"
     }
 
     const val androidUtils = "com.github.softcomoss:android-utils:${Versions.androidUtils}"

@@ -4,8 +4,9 @@
         <attr name="stepperWidgetColor" format="color" />
         <attr name="stepperIconSize" format="dimension" />
         <attr name="stepperItems" format="reference" />
-        <attr name="stepperTextSize" format="dimension" />
+        <attr name="stepperTextAppearance" format="reference" />
         <attr name="stepperTextColor" format="color" />
+        <attr name="stepperTextSize" format="dimension" />
         <attr name="stepperType" format="string" />
     </declare-styleable>
 

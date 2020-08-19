@@ -35,9 +35,10 @@ class ProgressStepperMenu(
     context: Context,
     override var widgetColor: Int,
     override var iconSizeInPX: Int,
+    override var textAppearance: Int,
     override var textColor: Int,
-    override var textSizeInPX: Int
-) : StepperMenu(context, widgetColor, iconSizeInPX, textColor, textSizeInPX) {
+    override var textSizeInPX: Int?
+) : StepperMenu(context, widgetColor, iconSizeInPX, textAppearance, textColor, textSizeInPX) {
 
     private var progressAnimator: ValueAnimator = ValueAnimator.ofFloat()
 
@@ -57,7 +58,7 @@ class ProgressStepperMenu(
 
     override var currentStep: Int = 0
 
-    override val menuItems: List<StepperMenuItem> get() = _menuItems.map { it as StepperMenuItem }
+    override val menuItems: List<StepperMenuItem> get() = _menuItems
 
     private val _menuItems: ArrayList<ProgressStepperMenuItem> = arrayListOf()
 

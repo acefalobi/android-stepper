@@ -38,21 +38,23 @@ class TabNumberedStepperMenu(
     context: Context,
     override var widgetColor: Int,
     override var iconSizeInPX: Int,
+    override var textAppearance: Int,
     override var textColor: Int,
-    override var textSizeInPX: Int
-) : StepperMenu(context, widgetColor, iconSizeInPX, textColor, textSizeInPX) {
+    override var textSizeInPX: Int?
+) : StepperMenu(context, widgetColor, iconSizeInPX, textAppearance, textColor, textSizeInPX) {
 
     override var currentStep: Int = 0
 
-    override val menuItems: List<StepperMenuItem> get() = _menuItems.map { it as StepperMenuItem }
+    override val menuItems: List<StepperMenuItem> get() = _menuItems
 
     private val _menuItems: ArrayList<TabStepperMenuItem> = arrayListOf()
 
     override fun updateUI() {
         _menuItems.forEachIndexed { index, item ->
             val labelView = item.labelView.apply {
-                setTextSize(TypedValue.COMPLEX_UNIT_PX, textSizeInPX.toFloat())
+                setTextAppearance(textAppearance)
                 setTextColor(textColor)
+                textSizeInPX?.let { setTextSize(TypedValue.COMPLEX_UNIT_PX, it.toFloat()) }
             }
             val iconView = item.iconView.apply {
                 findViewById<TextView>(R.id.text_inner).run {
@@ -162,7 +164,7 @@ class TabNumberedStepperMenu(
         }
 
         val maxWidth = max(
-            _menuItems.maxBy { it.labelView.width }?.labelView?.width ?: 0,
+            _menuItems.maxByOrNull { it.labelView.width }?.labelView?.width ?: 0,
             labelView.width
         )
 
@@ -172,8 +174,9 @@ class TabNumberedStepperMenu(
 
         labelView.run {
             text = title
+            setTextAppearance(textAppearance)
             setTextColor(textColor)
-            setTextSize(TypedValue.COMPLEX_UNIT_PX, textSizeInPX.toFloat())
+            textSizeInPX?.let { setTextSize(TypedValue.COMPLEX_UNIT_PX, it.toFloat()) }
             layoutParams.width = maxWidth
         }
 

@@ -27,11 +27,11 @@ import com.aceinteract.android.stepper.StepperNavListener
 import com.aceinteract.android.stepper.StepperNavigationView
 import com.aceinteract.android.stepper.models.StepperSettings
 import com.aceinteract.android.stepper.presentation.steps.StepperViewModel
-import com.aceinteract.android.stepper.utils.findNavControllerFromFragment
 import kotlinx.android.synthetic.main.stepper_no_up_nav_activity.*
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
+import ng.softcom.android.utils.ui.findNavControllerFromFragmentContainer
 import ng.softcom.android.utils.ui.showToast
 
 /**
@@ -55,7 +55,7 @@ class StepperNoUpNavActivity : AppCompatActivity(), StepperNavListener {
 
         // Setup Action bar for title with top-level destinations.
         setupActionBarWithNavController(
-            findNavControllerFromFragment(R.id.frame_stepper),
+            findNavControllerFromFragmentContainer(R.id.frame_stepper),
             AppBarConfiguration.Builder(
                 R.id.step_1_dest,
                 R.id.step_2_dest,
@@ -86,7 +86,7 @@ class StepperNoUpNavActivity : AppCompatActivity(), StepperNavListener {
         )
 
         stepperNavListener = this@StepperNoUpNavActivity
-        setupWithNavController(findNavControllerFromFragment(R.id.frame_stepper))
+        setupWithNavController(findNavControllerFromFragmentContainer(R.id.frame_stepper))
     }
 
     private fun collectStateFlow() {
@@ -114,9 +114,4 @@ class StepperNoUpNavActivity : AppCompatActivity(), StepperNavListener {
         showToast("Stepper completed")
     }
 
-    /**
-     * Use navigation controller to navigate up.
-     */
-    override fun onSupportNavigateUp(): Boolean =
-        findNavControllerFromFragment(R.id.frame_stepper).navigateUp()
 }

@@ -2,10 +2,11 @@
 <TextView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/text_stepper_item_label"
-    android:gravity="center"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:layout_marginTop="@dimen/stepper_tab_text_spacing"
     android:alpha="0.44"
+    android:gravity="center"
     android:textColor="#000"
-    tools:text="Face Capture" />
+    tools:text="Face Capture"
+    tools:textAppearance="@style/TextAppearance.AppCompat" />

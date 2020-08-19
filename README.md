@@ -89,7 +89,7 @@ Gradle:
 
 ```gradle
 dependencies {
-    implementation 'com.github.acefalobi:android-stepper:0.1.4'
+    implementation 'com.github.acefalobi:android-stepper:0.1.5'
 }
 ```
 
@@ -97,7 +97,7 @@ Kotlin DSL:
 
 ```kotlin
 dependencies {
-    implementation("com.github.acefalobi:android-stepper:0.1.4")
+    implementation("com.github.acefalobi:android-stepper:0.1.5")
 }
 ```
 
@@ -262,6 +262,7 @@ stepper.menu.add(groupId, R.id.step_4_dest, order, "New Step")
 | *stepperItems* | reference (menu) | **REQUIRED:** Menu to get steps from |
 | *stepperType* | string (@string/stepper_type_tab, @string/stepper_type_tab_numbered, or, @string/stepper_type_progress | The type of stepper |
 | *stepperIconSize* | dimension | The size of the icons |
+| *stepperTextAppearance* | reference (style) | The style of the labels |
 | *stepperTextColor* | color | The color of the labels |
 | *stepperTextSize* | dimension | The size of the labels |
 | *stepperWidgetColor* | color | The color of widgets like icons and progress bars |

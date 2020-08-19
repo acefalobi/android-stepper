@@ -25,13 +25,13 @@ import com.aceinteract.android.stepper.StepperNavListener
 import com.aceinteract.android.stepper.StepperNavigationView
 import com.aceinteract.android.stepper.models.StepperSettings
 import com.aceinteract.android.stepper.presentation.steps.StepperViewModel
-import com.aceinteract.android.stepper.utils.findNavControllerFromFragment
 import kotlinx.android.synthetic.main.tab_stepper_activity.button_next
 import kotlinx.android.synthetic.main.tab_stepper_activity.stepper
 import kotlinx.android.synthetic.main.tab_stepper_activity.toolbar
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
+import ng.softcom.android.utils.ui.findNavControllerFromFragmentContainer
 import ng.softcom.android.utils.ui.showToast
 
 /**
@@ -54,7 +54,7 @@ class TabStepperActivity : AppCompatActivity(), StepperNavListener {
         setSupportActionBar(toolbar)
 
         // Setup Action bar for title and up navigation.
-        setupActionBarWithNavController(findNavControllerFromFragment(R.id.frame_stepper))
+        setupActionBarWithNavController(findNavControllerFromFragmentContainer(R.id.frame_stepper))
 
         button_next.setOnClickListener {
             stepper.goToNextStep()
@@ -74,7 +74,7 @@ class TabStepperActivity : AppCompatActivity(), StepperNavListener {
         )
 
         stepperNavListener = this@TabStepperActivity
-        setupWithNavController(findNavControllerFromFragment(R.id.frame_stepper))
+        setupWithNavController(findNavControllerFromFragmentContainer(R.id.frame_stepper))
     }
 
     private fun collectStateFlow() {
@@ -103,7 +103,7 @@ class TabStepperActivity : AppCompatActivity(), StepperNavListener {
      * Use navigation controller to navigate up.
      */
     override fun onSupportNavigateUp(): Boolean =
-        findNavControllerFromFragment(R.id.frame_stepper).navigateUp()
+        findNavControllerFromFragmentContainer(R.id.frame_stepper).navigateUp()
 
     /**
      * Navigate up when the back button is pressed.
@@ -112,7 +112,7 @@ class TabStepperActivity : AppCompatActivity(), StepperNavListener {
         if (stepper.currentStep == 0) {
             super.onBackPressed()
         } else {
-            findNavControllerFromFragment(R.id.frame_stepper).navigateUp()
+            findNavControllerFromFragmentContainer(R.id.frame_stepper).navigateUp()
         }
     }
 }
