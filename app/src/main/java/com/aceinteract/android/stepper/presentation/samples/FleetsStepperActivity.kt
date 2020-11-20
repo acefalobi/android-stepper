@@ -37,7 +37,7 @@ import ng.softcom.android.utils.ui.findNavControllerFromFragmentContainer
 import ng.softcom.android.utils.ui.showToast
 
 /**
- * Activity showing an sample usage of a stepper without up navigation.
+ * Activity showing an sample usage of a fleets stepper.
  */
 @ExperimentalCoroutinesApi
 class FleetsStepperActivity : AppCompatActivity(), StepperNavListener {
