@@ -81,7 +81,7 @@ class FleetsStepperMenu(
     private fun addItemView(
         groupId: Int,
         itemId: Int,
-        order: Int,
+        order: Int
     ): FleetsStepperMenuItem {
         val progressView = LayoutInflater.from(context).inflate(
             R.layout.stepper_progress,
