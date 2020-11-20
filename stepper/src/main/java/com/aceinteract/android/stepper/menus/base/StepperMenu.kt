@@ -61,6 +61,11 @@ abstract class StepperMenu constructor(
     protected abstract val menuItems: List<StepperMenuItem>
 
     /**
+     * Called when the menu step is changed.
+     */
+    var onStepChangedListener: (Int) -> Unit = {}
+
+    /**
      * Change the current step to the menu item with [itemId].
      *
      * @param itemId the id to search for.

@@ -49,6 +49,8 @@ class ProgressStepperMenu(
         progressBar.id = View.generateViewId()
 
         (progressBar.layoutParams as LayoutParams).run {
+            startToStart = id
+            endToEnd = id
             topToTop = id
             bottomToBottom = id
         }

@@ -6,5 +6,6 @@
     <string name="stepper_type_tab">TAB</string>
     <string name="stepper_type_tab_numbered">TAB_NUMBERED</string>
     <string name="stepper_type_progress">PROGRESS</string>
+    <string name="stepper_type_fleets">FLEETS</string>
 
 </resources>

@@ -8,6 +8,7 @@
         <attr name="stepperTextColor" format="color" />
         <attr name="stepperTextSize" format="dimension" />
         <attr name="stepperType" format="string" />
+        <attr name="stepperFleetDuration" format="integer" />
     </declare-styleable>
 
 </resources>

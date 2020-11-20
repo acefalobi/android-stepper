@@ -20,12 +20,14 @@ import android.graphics.Color
 import android.util.AttributeSet
 import android.view.MenuInflater
 import android.widget.FrameLayout
+import androidx.annotation.ColorInt
 import androidx.annotation.IdRes
 import androidx.core.content.withStyledAttributes
 import androidx.navigation.AnimBuilder
 import androidx.navigation.NavController
 import androidx.navigation.navOptions
 import com.aceinteract.android.stepper.menus.base.StepperMenu
+import com.aceinteract.android.stepper.menus.fleets.FleetsStepperMenu
 import com.aceinteract.android.stepper.menus.progress.ProgressStepperMenu
 import com.aceinteract.android.stepper.menus.tab.TabNumberedStepperMenu
 import com.aceinteract.android.stepper.menus.tab.TabStepperMenu
@@ -46,6 +48,7 @@ class StepperNavigationView(context: Context, attrs: AttributeSet) : FrameLayout
     private val defaultWidgetColor = context.getColorCompat(R.color.color_stepper_default)
     private val defaultTextAppearance = android.R.style.TextAppearance
     private val defaultTextColor = Color.BLACK
+    private val defaultFleetDuration = 5000L
     private val defaultTextSize = 16 * resources.displayMetrics.density.toInt()
     private val defaultType = context.getString(R.string.stepper_type_tab)
 
@@ -53,6 +56,22 @@ class StepperNavigationView(context: Context, attrs: AttributeSet) : FrameLayout
      * The menu that displays the steps.
      */
     lateinit var menu: StepperMenu
+
+    /**
+     * How long fleets should last in [R.string.stepper_type_fleets].
+     */
+    var fleetDuration: Long
+        set(value) {
+            if (menu is FleetsStepperMenu) {
+                (menu as FleetsStepperMenu).fleetDuration = value
+                menu.updateUI()
+            }
+        }
+        get() = if (menu is FleetsStepperMenu) {
+            (menu as FleetsStepperMenu).fleetDuration
+        } else {
+            defaultFleetDuration
+        }
 
     /**
      * The color to use for widgets.
@@ -68,7 +87,7 @@ class StepperNavigationView(context: Context, attrs: AttributeSet) : FrameLayout
      * The color to use for labels.
      */
     var textColor: Int
-        set(value) {
+        set(@ColorInt value) {
             menu.textColor = value
             menu.updateUI()
         }
@@ -104,7 +123,7 @@ class StepperNavigationView(context: Context, attrs: AttributeSet) : FrameLayout
         }
         get() = menu.iconSizeInPX
 
-    private var onStepChanged: ((Int) -> Unit) = {
+    private var onStepChanged: (Int) -> Unit = {
         stepperNavListener?.onStepChanged(it)
         if (it > menu.size() - 1) stepperNavListener?.onCompleted()
     }
@@ -121,12 +140,27 @@ class StepperNavigationView(context: Context, attrs: AttributeSet) : FrameLayout
 
     init {
         context.withStyledAttributes(attrs, R.styleable.StepperNavigationView, 0) {
-            val widgetColorAttr = getColor(R.styleable.StepperNavigationView_stepperWidgetColor, defaultWidgetColor)
-            val iconSizeAttr = getDimensionPixelSize(R.styleable.StepperNavigationView_stepperIconSize, defaultIconSize)
-            val textAppearanceAttr = getResourceId(R.styleable.StepperNavigationView_stepperTextAppearance, defaultTextAppearance)
-            val textColorAttr = getColor(R.styleable.StepperNavigationView_stepperTextColor, defaultTextColor)
+            val fleetDurationAttr = getInteger(
+                R.styleable.StepperNavigationView_stepperFleetDuration,
+                defaultFleetDuration.toInt()
+            ).toLong()
+            val widgetColorAttr =
+                getColor(R.styleable.StepperNavigationView_stepperWidgetColor, defaultWidgetColor)
+            val iconSizeAttr = getDimensionPixelSize(
+                R.styleable.StepperNavigationView_stepperIconSize,
+                defaultIconSize
+            )
+            val textAppearanceAttr = getResourceId(
+                R.styleable.StepperNavigationView_stepperTextAppearance,
+                defaultTextAppearance
+            )
+            val textColorAttr =
+                getColor(R.styleable.StepperNavigationView_stepperTextColor, defaultTextColor)
             val textSizeAttr = if (hasValue(R.styleable.StepperNavigationView_stepperTextSize)) {
-                getDimensionPixelSize(R.styleable.StepperNavigationView_stepperTextSize, defaultTextSize)
+                getDimensionPixelSize(
+                    R.styleable.StepperNavigationView_stepperTextSize,
+                    defaultTextSize
+                )
             } else null
 
             val type = if (hasValue(R.styleable.StepperNavigationView_stepperType)) {
@@ -164,7 +198,20 @@ class StepperNavigationView(context: Context, attrs: AttributeSet) : FrameLayout
                         textSizeAttr
                     )
                 }
+                context.getString(R.string.stepper_type_fleets) -> {
+                    FleetsStepperMenu(
+                        context,
+                        widgetColorAttr,
+                        iconSizeAttr,
+                        textAppearanceAttr,
+                        textColorAttr,
+                        textSizeAttr,
+                        fleetDurationAttr
+                    )
+                }
                 else -> throw IllegalArgumentException("Invalid stepper type provided")
+            }.apply {
+                onStepChangedListener = { onStepChanged.invoke(it) }
             }
 
             if (hasValue(R.styleable.StepperNavigationView_stepperItems)) {
