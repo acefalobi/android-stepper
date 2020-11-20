@@ -22,6 +22,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.aceinteract.android.stepper.R
 import com.aceinteract.android.stepper.models.ActivityItem
 import com.aceinteract.android.stepper.presentation.samples.FadeAnimStepperActivity
+import com.aceinteract.android.stepper.presentation.samples.FleetsStepperActivity
 import com.aceinteract.android.stepper.presentation.samples.NumberedTabStepperActivity
 import com.aceinteract.android.stepper.presentation.samples.ProgressStepperActivity
 import com.aceinteract.android.stepper.presentation.samples.StepperNoUpNavActivity
@@ -70,6 +71,10 @@ class MainActivity : AppCompatActivity() {
                     ActivityItem(
                         getString(R.string.title_progress_stepper),
                         ProgressStepperActivity::class.java
+                    ),
+                    ActivityItem(
+                        getString(R.string.title_fleets_stepper),
+                        FleetsStepperActivity::class.java
                     ),
                     ActivityItem(
                         getString(R.string.title_fade_anim_stepper),

@@ -8,6 +8,7 @@
     <string name="title_text_size">Text Size</string>
 
     <string name="title_progress_stepper">Progress Stepper</string>
+    <string name="title_fleets_stepper">Fleets Stepper</string>
     <string name="title_tab_stepper">Tab Stepper</string>
     <string name="title_tab_numbered_stepper">Numbered Tab Stepper</string>
     <string name="title_fade_anim_stepper">Stepper With Fade Transition Animation</string>

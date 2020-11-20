@@ -23,6 +23,9 @@
             android:name=".presentation.samples.ProgressStepperActivity"
             android:label="@string/title_progress_stepper" />
         <activity
+            android:name=".presentation.samples.FleetsStepperActivity"
+            android:label="@string/title_fleets_stepper" />
+        <activity
             android:name=".presentation.samples.TabStepperActivity"
             android:label="@string/title_tab_stepper" />
         <activity

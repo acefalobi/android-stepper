@@ -5,4 +5,6 @@
 
     <dimen name="stepper_tab_text_spacing">12dp</dimen>
 
+    <dimen name="stepper_progress_spacing">6dp</dimen>
+
 </resources>

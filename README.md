@@ -39,6 +39,8 @@ See the [Sample app](https://github.com/acefalobi/android-stepper/tree/master/ap
 
 * Progress
 
+* Fleets (Stories)
+
 <img src ="./art/stepper_tabs.gif" width="32%" />&nbsp;&nbsp;<img src ="./art/stepper_tabs_numbered.gif" width="32%" />&nbsp;&nbsp;<img src ="./art/stepper_progress.gif" width="32%" />
 
 ### WIP
@@ -266,6 +268,7 @@ stepper.menu.add(groupId, R.id.step_4_dest, order, "New Step")
 | *stepperTextColor* | color | The color of the labels |
 | *stepperTextSize* | dimension | The size of the labels |
 | *stepperWidgetColor* | color | The color of widgets like icons and progress bars |
+| *stepperFleetDuration* | integer | The duration (in milliseconds) that fleets should last for |
 
 ## Contributing
 
