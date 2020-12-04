@@ -99,7 +99,7 @@ Kotlin DSL:
 
 ```kotlin
 dependencies {
-    implementation("com.github.acefalobi:android-stepper:0.2.0")
+    implementation("com.github.acefalobi:android-stepper:0.2.1")
 }
 ```
 
