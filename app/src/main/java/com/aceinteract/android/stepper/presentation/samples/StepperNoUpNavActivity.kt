@@ -113,5 +113,4 @@ class StepperNoUpNavActivity : AppCompatActivity(), StepperNavListener {
     override fun onCompleted() {
         showToast("Stepper completed")
     }
-
 }

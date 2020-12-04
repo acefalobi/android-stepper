@@ -128,5 +128,4 @@ class FleetsStepperActivity : AppCompatActivity(), StepperNavListener {
     override fun onCompleted() {
         showToast("Stepper completed")
     }
-
 }
