@@ -229,6 +229,7 @@ class StepperNavigationView(context: Context, attrs: AttributeSet) : FrameLayout
      *
      * @param navController navigation controller for navigating between destinations.
      */
+    @JvmOverloads
     fun setupWithNavController(
         navController: NavController,
         navAnimBuilder: AnimBuilder.() -> Unit = {
