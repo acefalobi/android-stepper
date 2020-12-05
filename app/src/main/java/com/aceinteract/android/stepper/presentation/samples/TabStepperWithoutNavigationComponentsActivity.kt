@@ -13,7 +13,6 @@ import ng.softcom.android.utils.ui.showToast
  */
 class TabStepperWithoutNavigationComponentsActivity : AppCompatActivity(), StepperNavListener {
 
-    private var animationStartTime = 0L
     private val menuTitles = arrayListOf<String>()
 
     /**
@@ -30,7 +29,6 @@ class TabStepperWithoutNavigationComponentsActivity : AppCompatActivity(), Stepp
 
     private fun initializeStepper() {
         stepper.stepperNavListener = this@TabStepperWithoutNavigationComponentsActivity
-        stepper.setupWithoutNavController()
     }
 
     private fun initializeToolbar() {
@@ -50,10 +48,6 @@ class TabStepperWithoutNavigationComponentsActivity : AppCompatActivity(), Stepp
         }
 
         button_previous.setOnClickListener {
-            if (stepper.currentStep == 0 && System.currentTimeMillis() - animationStartTime < 300) {
-                return@setOnClickListener
-            }
-            animationStartTime = System.currentTimeMillis()
             stepper.goToPreviousStep()
         }
     }
@@ -71,16 +65,14 @@ class TabStepperWithoutNavigationComponentsActivity : AppCompatActivity(), Stepp
     }
 
     private fun setupPreviousButtonVisibility(step: Int) {
-        when (step > 0) {
-            true -> button_previous.show()
-            false -> button_previous.hide()
-        }
+        button_previous.isVisible = step > 0
     }
 
     private fun setupNextButtonImage(step: Int) {
-        when (step == 3) {
-            true -> button_next.setImageResource(R.drawable.ic_check)
-            false -> button_next.setImageResource(R.drawable.ic_right)
+        if (step == 3) {
+            button_next.setImageResource(R.drawable.ic_check)
+        } else {
+            button_next.setImageResource(R.drawable.ic_right)
         }
     }
 
