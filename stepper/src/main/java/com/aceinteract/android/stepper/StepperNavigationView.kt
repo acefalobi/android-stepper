@@ -225,6 +225,22 @@ class StepperNavigationView(context: Context, attrs: AttributeSet) : FrameLayout
     }
 
     /**
+     * Sets up the stepper to navigate steps without using navigation components.
+     */
+    fun setupWithoutNavController() {
+        onStepChanged = {
+            when (it == menu.size()) {
+                true -> stepperNavListener?.onCompleted()
+                false -> {
+                    menu.currentStep = it
+                    menu.updateUI()
+                    stepperNavListener?.onStepChanged(currentStep)
+                }
+            }
+        }
+    }
+
+    /**
      * Sets up the stepper to navigate steps using navigation components.
      *
      * @param navController navigation controller for navigating between destinations.

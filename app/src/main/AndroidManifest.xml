@@ -34,6 +34,9 @@
         <activity
             android:name=".presentation.samples.FadeAnimStepperActivity"
             android:label="@string/title_fade_anim_stepper" />
+        <activity
+            android:name=".presentation.samples.TabStepperWithoutNavigationComponentsActivity"
+            android:label="@string/title_without_navigation_components" />
     </application>
 
 </manifest>
