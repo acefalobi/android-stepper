@@ -124,8 +124,13 @@ class StepperNavigationView(context: Context, attrs: AttributeSet) : FrameLayout
         get() = menu.iconSizeInPX
 
     private var onStepChanged: (Int) -> Unit = {
-        stepperNavListener?.onStepChanged(it)
-        if (it > menu.size() - 1) stepperNavListener?.onCompleted()
+        if (it == menu.size()) {
+            stepperNavListener?.onCompleted()
+        } else {
+            menu.currentStep = it
+            menu.updateUI()
+            stepperNavListener?.onStepChanged(currentStep)
+        }
     }
 
     /**
@@ -222,22 +227,6 @@ class StepperNavigationView(context: Context, attrs: AttributeSet) : FrameLayout
 
         menu.layoutParams = LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT)
         addView(menu)
-    }
-
-    /**
-     * Sets up the stepper to navigate steps without using navigation components.
-     */
-    fun setupWithoutNavController() {
-        onStepChanged = {
-            when (it == menu.size()) {
-                true -> stepperNavListener?.onCompleted()
-                false -> {
-                    menu.currentStep = it
-                    menu.updateUI()
-                    stepperNavListener?.onStepChanged(currentStep)
-                }
-            }
-        }
     }
 
     /**
