@@ -124,8 +124,13 @@ class StepperNavigationView(context: Context, attrs: AttributeSet) : FrameLayout
         get() = menu.iconSizeInPX
 
     private var onStepChanged: (Int) -> Unit = {
-        stepperNavListener?.onStepChanged(it)
-        if (it > menu.size() - 1) stepperNavListener?.onCompleted()
+        if (it == menu.size()) {
+            stepperNavListener?.onCompleted()
+        } else {
+            menu.currentStep = it
+            menu.updateUI()
+            stepperNavListener?.onStepChanged(currentStep)
+        }
     }
 
     /**

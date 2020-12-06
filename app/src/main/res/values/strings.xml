@@ -13,6 +13,7 @@
     <string name="title_tab_numbered_stepper">Numbered Tab Stepper</string>
     <string name="title_fade_anim_stepper">Stepper With Fade Transition Animation</string>
     <string name="title_no_up_nav_stepper">Stepper Without Up Navigation</string>
+    <string name="title_without_navigation_components">Tab Stepper Without Navigation Components</string>
 
     <!-- Actions -->
     <string name="action_previous_step">Previous Step</string>

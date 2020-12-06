@@ -27,6 +27,7 @@ import com.aceinteract.android.stepper.presentation.samples.NumberedTabStepperAc
 import com.aceinteract.android.stepper.presentation.samples.ProgressStepperActivity
 import com.aceinteract.android.stepper.presentation.samples.StepperNoUpNavActivity
 import com.aceinteract.android.stepper.presentation.samples.TabStepperActivity
+import com.aceinteract.android.stepper.presentation.samples.TabStepperWithoutNavigationComponentsActivity
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.activity_main.toolbar
 import kotlinx.coroutines.ExperimentalCoroutinesApi
@@ -79,6 +80,10 @@ class MainActivity : AppCompatActivity() {
                     ActivityItem(
                         getString(R.string.title_fade_anim_stepper),
                         FadeAnimStepperActivity::class.java
+                    ),
+                    ActivityItem(
+                        getString(R.string.title_without_navigation_components),
+                        TabStepperWithoutNavigationComponentsActivity::class.java
                     )
                 )
             )
