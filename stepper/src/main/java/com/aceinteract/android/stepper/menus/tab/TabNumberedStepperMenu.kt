@@ -136,7 +136,10 @@ class TabNumberedStepperMenu(
             val lastIconView = _menuItems.last().iconView
             val lastLabelView = _menuItems.last().labelView
 
-            (lastLabelView.layoutParams as LayoutParams).endToStart = labelView.id
+            (lastLabelView.layoutParams as LayoutParams).run {
+                endToStart = labelView.id
+                endToEnd = -1
+            }
 
             (labelView.layoutParams as LayoutParams).startToEnd = lastLabelView.id
 

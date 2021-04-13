@@ -68,7 +68,7 @@ Gradle:
 ```gradle
 allprojects {
     repositories {
-        ...
+        // ...
         maven { url 'https://jitpack.io' }
     }
 }
@@ -79,7 +79,7 @@ Kotlin DSL:
 ```kotlin
 allprojects {
     repositories {
-        ...
+        // ...
         maven("https://jitpack.io")
     }
 }
@@ -262,7 +262,7 @@ stepper.menu.add(groupId, R.id.step_4_dest, order, "New Step")
 | Attribute name | Format | Description |
 | - | - | - |
 | *stepperItems* | reference (menu) | **REQUIRED:** Menu to get steps from |
-| *stepperType* | string (@string/stepper_type_tab, @string/stepper_type_tab_numbered, or, @string/stepper_type_progress | The type of stepper |
+| *stepperType* | one of `tab`, `tab_numbered`, `progress`, or `fleets` | The type of stepper |
 | *stepperIconSize* | dimension | The size of the icons |
 | *stepperTextAppearance* | reference (style) | The style of the labels |
 | *stepperTextColor* | color | The color of the labels |

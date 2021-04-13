@@ -50,7 +50,7 @@ class StepperNavigationView(context: Context, attrs: AttributeSet) : FrameLayout
     private val defaultTextColor = Color.BLACK
     private val defaultFleetDuration = 5000L
     private val defaultTextSize = 16 * resources.displayMetrics.density.toInt()
-    private val defaultType = context.getString(R.string.stepper_type_tab)
+    private val defaultType = StepperType.TAB
 
     /**
      * The menu that displays the steps.
@@ -169,11 +169,16 @@ class StepperNavigationView(context: Context, attrs: AttributeSet) : FrameLayout
             } else null
 
             val type = if (hasValue(R.styleable.StepperNavigationView_stepperType)) {
-                getString(R.styleable.StepperNavigationView_stepperType)
+                StepperType.values().find {
+                    it.identifier == getInt(
+                        R.styleable.StepperNavigationView_stepperType,
+                        StepperType.TAB.identifier
+                    )
+                }
             } else defaultType
 
             menu = when (type) {
-                context.getString(R.string.stepper_type_tab) -> {
+                StepperType.TAB -> {
                     TabStepperMenu(
                         context,
                         widgetColorAttr,
@@ -183,7 +188,7 @@ class StepperNavigationView(context: Context, attrs: AttributeSet) : FrameLayout
                         textSizeAttr
                     )
                 }
-                context.getString(R.string.stepper_type_tab_numbered) -> {
+                StepperType.TAB_NUMBERED -> {
                     TabNumberedStepperMenu(
                         context,
                         widgetColorAttr,
@@ -193,7 +198,7 @@ class StepperNavigationView(context: Context, attrs: AttributeSet) : FrameLayout
                         textSizeAttr
                     )
                 }
-                context.getString(R.string.stepper_type_progress) -> {
+                StepperType.PROGRESS -> {
                     ProgressStepperMenu(
                         context,
                         widgetColorAttr,
@@ -203,7 +208,7 @@ class StepperNavigationView(context: Context, attrs: AttributeSet) : FrameLayout
                         textSizeAttr
                     )
                 }
-                context.getString(R.string.stepper_type_fleets) -> {
+                StepperType.FLEETS -> {
                     FleetsStepperMenu(
                         context,
                         widgetColorAttr,
@@ -291,5 +296,33 @@ class StepperNavigationView(context: Context, attrs: AttributeSet) : FrameLayout
      */
     fun goToNextStep() {
         onStepChanged.invoke(menu.currentStep + 1)
+    }
+
+    /**
+     * Enumeration of the different type of steppers available.
+     *
+     * @property identifier the unique byte int for the stepper type.
+     */
+    enum class StepperType(val identifier: Int) {
+
+        /**
+         * Simple tabbed stepper.
+         */
+        TAB(0x01),
+
+        /**
+         * Tabbed stepper with step numbers.
+         */
+        TAB_NUMBERED(0x02),
+
+        /**
+         * Simple progress bar stepper.
+         */
+        PROGRESS(0x03),
+
+        /**
+         * Story-style stepper (Twitter fleets).
+         */
+        FLEETS(0x04)
     }
 }
