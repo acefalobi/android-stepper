@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    app:cardElevation="0dp"
     android:elevation="0dp"
     android:layout_width="0dp"
     tools:layout_width="match_parent"
@@ -19,4 +20,4 @@
         tools:progress="50"
         tools:progressTint="@color/color_stepper_default" />
 
-</androidx.cardview.widget.CardView>
+</com.google.android.material.card.MaterialCardView>

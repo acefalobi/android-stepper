@@ -6,9 +6,15 @@
         <attr name="stepperItems" format="reference" />
         <attr name="stepperTextAppearance" format="reference" />
         <attr name="stepperTextColor" format="color" />
-        <attr name="stepperTextSize" format="dimension" />
-        <attr name="stepperType" format="string" />
+        <attr name="stepperTextSize" format="dimension" />=
         <attr name="stepperFleetDuration" format="integer" />
+
+        <attr name="stepperType">
+            <enum name="tab" value="0x01" />
+            <enum name="tab_numbered" value="0x02" />
+            <enum name="progress" value="0x03" />
+            <enum name="fleets" value="0x04" />
+        </attr>
     </declare-styleable>
 
 </resources>

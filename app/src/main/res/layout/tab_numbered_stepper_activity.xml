@@ -51,7 +51,7 @@
             app:stepperItems="@menu/menu_stepper"
             app:stepperTextColor="@android:color/black"
             app:stepperTextSize="12sp"
-            app:stepperType="@string/stepper_type_tab_numbered"
+            app:stepperType="tab_numbered"
             app:stepperWidgetColor="@color/color_accent" />
 
 

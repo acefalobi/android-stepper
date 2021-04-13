@@ -51,7 +51,7 @@
             app:stepperItems="@menu/menu_stepper"
             app:stepperTextColor="@android:color/black"
             app:stepperTextSize="12sp"
-            app:stepperType="@string/stepper_type_tab"
+            app:stepperType="tab"
             app:stepperWidgetColor="@color/color_accent" />
 
     </androidx.cardview.widget.CardView>
