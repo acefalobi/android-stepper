@@ -18,6 +18,7 @@ package com.aceinteract.android.stepper.menus.tab
 import android.content.Context
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
+import android.os.Build
 import android.util.TypedValue
 import android.view.LayoutInflater
 import android.view.MenuItem
@@ -52,7 +53,10 @@ class TabNumberedStepperMenu(
     override fun updateUI() {
         _menuItems.forEachIndexed { index, item ->
             val labelView = item.labelView.apply {
-                setTextAppearance(textAppearance)
+                if (Build.VERSION.SDK_INT < Build.VERSION_CODES.M)
+                    setTextAppearance(context, textAppearance)
+                else
+                    setTextAppearance(textAppearance)
                 setTextColor(textColor)
                 textSizeInPX?.let { setTextSize(TypedValue.COMPLEX_UNIT_PX, it.toFloat()) }
             }
@@ -177,7 +181,10 @@ class TabNumberedStepperMenu(
 
         labelView.run {
             text = title
-            setTextAppearance(textAppearance)
+            if (Build.VERSION.SDK_INT < Build.VERSION_CODES.M)
+                setTextAppearance(context, textAppearance)
+            else
+                setTextAppearance(textAppearance)
             setTextColor(textColor)
             textSizeInPX?.let { setTextSize(TypedValue.COMPLEX_UNIT_PX, it.toFloat()) }
             layoutParams.width = maxWidth
