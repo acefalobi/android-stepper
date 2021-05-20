@@ -29,6 +29,7 @@ import androidx.core.view.isVisible
 import com.aceinteract.android.stepper.R
 import com.aceinteract.android.stepper.menus.base.StepperMenu
 import com.aceinteract.android.stepper.menus.base.StepperMenuItem
+import com.google.android.material.card.MaterialCardView
 import kotlin.math.max
 
 /**
@@ -66,6 +67,8 @@ class TabNumberedStepperMenu(
                     endToEnd = labelView.id
                     topToTop = this@TabNumberedStepperMenu.id
                 }
+
+                (this as MaterialCardView).radius = iconSizeInPX / 2f
             }
             val connectorView = item.connectorView?.apply {
                 setBackgroundColor(widgetColor)
