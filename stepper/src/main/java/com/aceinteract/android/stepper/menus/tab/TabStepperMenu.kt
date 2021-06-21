@@ -19,6 +19,7 @@ import android.content.Context
 import android.content.res.ColorStateList
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
+import android.os.Build
 import android.util.TypedValue
 import android.view.LayoutInflater
 import android.view.MenuItem
@@ -53,7 +54,10 @@ class TabStepperMenu(
     override fun updateUI() {
         _menuItems.forEachIndexed { index, item ->
             val labelView = item.labelView.apply {
-                setTextAppearance(textAppearance)
+                if (Build.VERSION.SDK_INT < Build.VERSION_CODES.M)
+                    setTextAppearance(context, textAppearance)
+                else
+                    setTextAppearance(textAppearance)
                 setTextColor(textColor)
                 textSizeInPX?.let { setTextSize(TypedValue.COMPLEX_UNIT_PX, it.toFloat()) }
             }
@@ -92,7 +96,7 @@ class TabStepperMenu(
                     iconView.findViewById<AppCompatImageView>(R.id.icon_inner).run {
                         isVisible = true
                         setImageResource(R.drawable.ic_check_mini)
-                        imageTintList = ColorStateList.valueOf(Color.WHITE)
+                        imageTintList = ColorStateList.valueOf(Color.BLUE)
                     }
                     labelView.alpha = 1F
                     connectorView?.alpha = 1F
@@ -185,7 +189,10 @@ class TabStepperMenu(
 
         labelView.run {
             text = title
-            setTextAppearance(textAppearance)
+            if (Build.VERSION.SDK_INT < Build.VERSION_CODES.M)
+                setTextAppearance(context, textAppearance)
+            else
+                setTextAppearance(textAppearance)
             setTextColor(textColor)
             textSizeInPX?.let { setTextSize(TypedValue.COMPLEX_UNIT_PX, it.toFloat()) }
             layoutParams.width = maxWidth
