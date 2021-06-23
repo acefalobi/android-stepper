@@ -296,6 +296,7 @@ class StepperNavigationView(context: Context, attrs: AttributeSet) : FrameLayout
      * Go to the step at the index.
      */
     fun goToStep(index:Int) {
+        if(index!=menu.currentStep)
         onStepChanged.invoke(index)
     }
 
