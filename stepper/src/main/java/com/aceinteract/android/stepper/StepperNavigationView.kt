@@ -19,7 +19,7 @@ import android.content.Context
 import android.graphics.Color
 import android.util.AttributeSet
 import android.view.MenuInflater
-import android.widget.FrameLayout
+import android.widget.HorizontalScrollView
 import androidx.annotation.ColorInt
 import androidx.annotation.IdRes
 import androidx.core.content.withStyledAttributes
@@ -42,7 +42,10 @@ import ng.softcom.android.utils.ui.getColorCompat
  * @param context the context to initialize the view with.
  * @param attrs the set of XML attributes to initialize the view with.
  */
-class StepperNavigationView(context: Context, attrs: AttributeSet) : FrameLayout(context, attrs) {
+class StepperNavigationView(
+    context: Context,
+    attrs: AttributeSet
+) : HorizontalScrollView(context, attrs) {
 
     private val defaultIconSize = 20 * resources.displayMetrics.scaledDensity.toInt()
     private val defaultWidgetColor = context.getColorCompat(R.color.color_stepper_default)
@@ -58,7 +61,7 @@ class StepperNavigationView(context: Context, attrs: AttributeSet) : FrameLayout
     lateinit var menu: StepperMenu
 
     /**
-     * How long fleets should last in [R.string.stepper_type_fleets].
+     * How long fleets should last in [FleetsStepperMenu].
      */
     var fleetDuration: Long
         set(value) {
@@ -144,6 +147,8 @@ class StepperNavigationView(context: Context, attrs: AttributeSet) : FrameLayout
     val currentStep get() = menu.currentStep
 
     init {
+        isFillViewport = true
+        isHorizontalScrollBarEnabled = false
         context.withStyledAttributes(attrs, R.styleable.StepperNavigationView, 0) {
             val fleetDurationAttr = getInteger(
                 R.styleable.StepperNavigationView_stepperFleetDuration,
@@ -230,7 +235,7 @@ class StepperNavigationView(context: Context, attrs: AttributeSet) : FrameLayout
             } else throw IllegalArgumentException("items attribute is required")
         }
 
-        menu.layoutParams = LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT)
+        menu.layoutParams = LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT)
         addView(menu)
     }
 

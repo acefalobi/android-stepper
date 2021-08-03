@@ -37,6 +37,9 @@
         <activity
             android:name=".presentation.samples.TabStepperWithoutNavigationComponentsActivity"
             android:label="@string/title_without_navigation_components" />
+        <activity
+            android:name=".presentation.samples.TabStepperWithOverflowActivity"
+            android:label="@string/title_with_overflow" />
     </application>
 
 </manifest>

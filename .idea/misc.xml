@@ -1,5 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="../../../../layout/custom_preview.xml" value="0.34322916666666664" />
+        <entry key="app/src/main/res/drawable/ic_check.xml" value="0.16614583333333333" />
+        <entry key="app/src/main/res/layout/tab_stepper_activity.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/tab_stepper_with_overflow_activity.xml" value="0.23981481481481481" />
+        <entry key="app/src/main/res/menu/menu_stepper.xml" value="0.15" />
+        <entry key="app/src/main/res/menu/menu_stepper_overflow.xml" value="0.23981481481481481" />
+        <entry key="stepper/src/main/res/layout/stepper_progress.xml" value="0.15" />
+        <entry key="stepper/src/main/res/layout/stepper_tab_item_label.xml" value="0.15" />
+      </map>
+    </option>
+  </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
