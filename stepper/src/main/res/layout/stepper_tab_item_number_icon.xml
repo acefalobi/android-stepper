@@ -6,7 +6,7 @@
     android:layout_width="0dp"
     android:layout_height="0dp"
     app:cardBackgroundColor="@android:color/transparent"
-    app:cardCornerRadius="100dp"
+    app:cardCornerRadius="10dp"
     app:layout_constraintTop_toTopOf="parent"
     tools:layout_height="36dp"
     tools:layout_width="36dp">
