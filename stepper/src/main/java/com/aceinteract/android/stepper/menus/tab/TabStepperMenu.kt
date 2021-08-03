@@ -27,6 +27,7 @@ import android.widget.FrameLayout
 import android.widget.TextView
 import androidx.appcompat.widget.AppCompatImageView
 import androidx.core.view.isVisible
+import androidx.core.widget.TextViewCompat
 import com.aceinteract.android.stepper.R
 import com.aceinteract.android.stepper.menus.base.StepperMenu
 import com.aceinteract.android.stepper.menus.base.StepperMenuItem
@@ -174,9 +175,12 @@ class TabStepperMenu(
             topToTop = id
         }
 
+        labelView.text = title
+        labelView.measure(0, 0)
+
         val maxWidth = max(
-            _menuItems.maxByOrNull { it.labelView.width }?.labelView?.width ?: 0,
-            labelView.width
+            _menuItems.maxByOrNull { it.labelView.measuredWidth }?.labelView?.measuredWidth ?: 0,
+            labelView.measuredWidth
         )
 
         _menuItems.forEach {
@@ -184,8 +188,7 @@ class TabStepperMenu(
         }
 
         labelView.run {
-            text = title
-            setTextAppearance(textAppearance)
+            TextViewCompat.setTextAppearance(this, textAppearance)
             setTextColor(textColor)
             textSizeInPX?.let { setTextSize(TypedValue.COMPLEX_UNIT_PX, it.toFloat()) }
             layoutParams.width = maxWidth

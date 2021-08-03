@@ -28,4 +28,28 @@
         android:name="com.aceinteract.android.stepper.presentation.steps.Step4Fragment"
         android:label="@string/title_icon_size"
         tools:layout="@layout/size_change_fragment" />
+
+    <fragment
+        android:id="@+id/step_5_dest"
+        android:name="com.aceinteract.android.stepper.presentation.steps.Step1Fragment"
+        android:label="@string/title_text_color"
+        tools:layout="@layout/color_change_fragment" />
+
+    <fragment
+        android:id="@+id/step_6_dest"
+        android:name="com.aceinteract.android.stepper.presentation.steps.Step2Fragment"
+        android:label="@string/title_widget_color"
+        tools:layout="@layout/color_change_fragment" />
+
+    <fragment
+        android:id="@+id/step_7_dest"
+        android:name="com.aceinteract.android.stepper.presentation.steps.Step3Fragment"
+        android:label="@string/title_text_size"
+        tools:layout="@layout/size_change_fragment" />
+
+    <fragment
+        android:id="@+id/step_8_dest"
+        android:name="com.aceinteract.android.stepper.presentation.steps.Step4Fragment"
+        android:label="@string/title_icon_size"
+        tools:layout="@layout/size_change_fragment" />
 </navigation>
