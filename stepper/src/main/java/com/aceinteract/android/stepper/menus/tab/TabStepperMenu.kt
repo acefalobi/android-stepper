@@ -27,6 +27,7 @@ import android.widget.FrameLayout
 import android.widget.TextView
 import androidx.appcompat.widget.AppCompatImageView
 import androidx.core.view.isVisible
+import androidx.core.widget.TextViewCompat
 import com.aceinteract.android.stepper.R
 import com.aceinteract.android.stepper.menus.base.StepperMenu
 import com.aceinteract.android.stepper.menus.base.StepperMenuItem
@@ -187,7 +188,7 @@ class TabStepperMenu(
         }
 
         labelView.run {
-            setTextAppearance(textAppearance)
+            TextViewCompat.setTextAppearance(this, textAppearance)
             setTextColor(textColor)
             textSizeInPX?.let { setTextSize(TypedValue.COMPLEX_UNIT_PX, it.toFloat()) }
             layoutParams.width = maxWidth
